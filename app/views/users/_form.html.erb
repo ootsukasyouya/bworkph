@@ -1,0 +1,49 @@
+<%= form_with(model: user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  <div class="field">
+    <%= f.label :ステータス %><br/>
+    <%= f.select :status, User.statuses.keys.map {|k| [I18n.t("enums.user.status.#{k}"), k]}, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :年齢 %><br/>
+    <%= f.number_field :age, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :住所 %><br/>
+    <%= f.text_field :addres, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :電話番号 %><br/>
+    <%= f.telephone_field :phone_number, autofocus: true %>
+  </div>
+  <div class="field">
+  <%= f.label :パスワード %>
+  <%= f.password_field :password %>
+  </div>
+  <div class="field">
+  <%= f.label :パスワード確認 %>
+  <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

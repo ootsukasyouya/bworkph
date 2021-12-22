@@ -5,6 +5,9 @@ ruby '3.0.1'
 
 gem 'geocoder'
 gem 'dotenv-rails'
+gem 'bcrypt'
+gem 'enum_help'
+gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
