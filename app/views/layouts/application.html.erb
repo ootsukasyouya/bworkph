@@ -11,6 +11,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    <header>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">タスク管理</a>
+        </li>
+        <li class="navbar-item">
+          <%= link_to("タスク登録", "/tasks/new", { class: "nav-link"}) %>
+        </li>
+        <li class="navbar-item">
+          <%= link_to("アカウント詳細", "/users/new", { class: "nav-link"}) %>
+        </li>
+        <li class="navbar-item">
+          <%= link_to("ユーザー新規登録", "/users/new", { class: "nav-link"}) %>
+        </li>
+        <li class="navbar-item">
+          <%= link_to("ログアウト", "/sessions/new", {method: "delete", class: "nav-link"}) %>
+        </li>
+        <li class="navbar-item">
+          <%= link_to("ログイン画面", "/sessions/new", {method: "delete", class: "nav-link"}) %>
+        </li>
+      </ul>
+    </header>
+  <%= yield %>
   </body>
 </html>
