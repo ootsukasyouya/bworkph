@@ -1,32 +1,33 @@
 <div class="container-fruid">
   <table class="table table-striped">
     <p id="notice"><%= notice %></p>
-    <tr>
-      <th>名前</th>
-      <th>メールアドレス</th>
-      <th>ステータス</th>
-      <th>年齢</th>
-      <th>住所</th>
-      <th>電話番号</th>
-      <th colspan="3"></th>
-    </tr>
-
-    <tbody>
+      <tr>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+        <th>年齢</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th colspan="3"></th>
+      </tr>
+      <tbody>
       <% @users.each do |user| %>
-        <tr class= "tr_list">
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.status %></td>
-          <td><%= user.age %></td>
-          <td><%= user.addres %></td>
-          <td><%= user.phone_number %></td>
-          <td><%= link_to '一覧', user %></td>
-          <td><%= link_to '編集', edit_user_path(user) %></td>
-          <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <% if user.id != current_user.id %>
+          <div class="item">
+            <tr class= "tr_list">
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.status %></td>
+              <td><%= user.age %></td>
+              <td><%= user.addres %></td>
+              <td><%= user.phone_number %></td>
+              <td><%= link_to '一覧', user %></td>
+              <td><%= link_to '編集', edit_user_path(user) %></td>
+              <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %></td>
+            </tr>
+          </div>
+        <% end %>
       <% end %>
     </tbody>
   </table>
 </div>
-
-<%= link_to 'New User', new_user_path %>
