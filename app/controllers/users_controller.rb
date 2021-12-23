@@ -7,9 +7,6 @@ class UsersController < ApplicationController
   end
   def new
     @user = User.new
-      # if logged_in?
-      # redirect_to tasks_path
-    # end
   end
 
   def create
@@ -24,18 +21,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # if @user.id != current_user.id
-    #   redirect_to tasks_path
-    # end
+  end
+
+  def edit
+
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      redirect_to edit_user__path(current_user)
+    end
   end
 
   private
-  # def ensure_current_user
-  #   if current_user.present?
-  #     redirect_to tasks_path
-  #     flash[:notice]="権限がありません"
-  #   end
-  # end
   def set_user
     @user = User.find(params[:id])
   end
