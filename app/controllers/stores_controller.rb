@@ -2,7 +2,7 @@ class StoresController < ApplicationController
   before_action :set_store, only: %i[ show edit update destroy ]
 
     def index
-      @stores = current_user.stores
+      @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
     end
 
     def show
