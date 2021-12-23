@@ -13,6 +13,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+        session[:user_id] = @user.id
         redirect_to admin_users_path
       else
         render :new
@@ -41,7 +42,7 @@ class Admin::UsersController < ApplicationController
   private
     def if_not_admin
       unless current_user.admin?
-        redirect_to root_path
+        redirect_to new_session_path
         flash[:notice]="管理者以外はアクセスできません"
       end
     end
@@ -51,6 +52,6 @@ class Admin::UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :admin, :password, :password_confimation)
+      params.require(:user).permit(:name, :email, :admin, :password, :password_confimation, :status, :age, :addres, :phone_number)
     end
 end
