@@ -8,6 +8,5 @@ class User < ApplicationRecord
   validates :age, presence: true, length: { maximum: 5 }
   before_validation { email.downcase! }
   has_secure_password
-  validates :password, length: { minimum: 6 }
   enum status:{会社員:0, 主婦:1, フリーター:2, 高校生:3, 無職:4, 大学生:5, 外国人:6}
 end
