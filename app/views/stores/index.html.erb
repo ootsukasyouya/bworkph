@@ -1,0 +1,29 @@
+<%= link_to '新しい情報登録', new_store_path %>
+
+<div class="container-fruid">
+  <table class="table table-striped">
+    <tr>
+      <th>店舗名</th>
+      <th>住所</th>
+      <th>電話番号</th>
+      <th>プロフィール</th>
+      <th colspan="3"></th>
+    </tr>
+
+    <tbody>
+      <% @stores.each do |store| %>
+        <tr class= "tr_list">
+          <td><%= store.name %></td>
+          <td><%= store.addres %></td>
+          <td><%= store.phone_number %></td>
+          <td><%= store.profile %></td>
+          <td><%= link_to 'お店の詳細', store %></td>
+          <td><%= link_to '編集', edit_store_path(store) %></td>
+          <td><%= link_to '削除', store, method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>

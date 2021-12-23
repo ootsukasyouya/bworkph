@@ -6,7 +6,7 @@
 <p>住所 <%= @user.addres %></p>
 <p>電話番号 <%= @user.phone_number %></p>
 <% if current_user.status == "店舗" %>
-
+  <%= link_to "店舗編集", stores_path(@user) %>
   <%= link_to '編集', edit_user_path(@user) %>
 <% else %>
   <%= link_to '編集', edit_user_path(@user) %>
