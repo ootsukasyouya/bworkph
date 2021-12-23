@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  get 'pages/home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :maps

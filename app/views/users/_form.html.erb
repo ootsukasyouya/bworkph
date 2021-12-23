@@ -23,18 +23,6 @@
     <%= f.select :status, User.statuses.keys.map {|k| [I18n.t("enums.user.status.#{k}"), k]}, autofocus: true %>
   </div>
   <div class="field">
-    <%= f.label :年齢 %><br/>
-    <%= f.number_field :age, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :住所 %><br/>
-    <%= f.text_field :addres, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :電話番号 %><br/>
-    <%= f.telephone_field :phone_number, autofocus: true %>
-  </div>
-  <div class="field">
   <%= f.label :パスワード %>
   <%= f.password_field :password %>
   </div>

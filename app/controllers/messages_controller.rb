@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       @messages = @conversation.messages
     end
     if @messages.last
-      @messages.where.not(user_id: current_user.id).update_all(read: true)
+       @messages.where.not(user_id: current_user.id).update_all(read: true)
     end
     @messages = @messages.order(:created_at)
     @message = @conversation.messages.build
