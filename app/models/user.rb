@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :comments, foreign_key: :commenter_id
   has_many :stores, dependent: :destroy
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 },
