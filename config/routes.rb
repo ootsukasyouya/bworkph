@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+  before_action :set_search
+  private
+  def set_search
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
+  end
+  get 'items/search'
 end

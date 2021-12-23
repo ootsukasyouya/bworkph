@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'enum_help'
 gem 'rails-i18n'
 gem 'irb', '>= 1.3.6'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
