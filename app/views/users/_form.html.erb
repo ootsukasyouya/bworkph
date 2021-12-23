@@ -19,7 +19,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
   <div class="field">
-    <%= f.label :ステータス %><br/>
+    <%= f.label :お店の方は店舗で登録、それ以外の方は該当のものを選んでください %><br/>
     <%= f.select :status, User.statuses.keys.map {|k| [I18n.t("enums.user.status.#{k}"), k]}, autofocus: true %>
   </div>
   <div class="field">
