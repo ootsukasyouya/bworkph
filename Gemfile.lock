@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/kaminari/kaminari
+  revision: 51ded9bd5a6ede694f4c1f860f65079e036b7dd4
+  specs:
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -230,6 +247,7 @@ DEPENDENCIES
   geocoder
   irb (>= 1.3.6)
   jbuilder (~> 2.7)
+  kaminari!
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
