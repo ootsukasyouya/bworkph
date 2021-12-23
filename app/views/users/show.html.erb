@@ -5,5 +5,9 @@
 <p>年齢 <%= @user.age %></p>
 <p>住所 <%= @user.addres %></p>
 <p>電話番号 <%= @user.phone_number %></p>
-<%= link_to '編集', edit_user_path(@user) %> |
-<%= link_to 'ユーザー一覧', users_path %>
+<% if current_user.status == "店舗" %>
+
+  <%= link_to '編集', edit_user_path(@user) %>
+<% else %>
+  <%= link_to '編集', edit_user_path(@user) %>
+<% end %>
