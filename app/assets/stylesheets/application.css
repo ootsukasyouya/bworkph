@@ -13,6 +13,83 @@
  *= require_tree .
  *= require_self
  */
+
+
+footer {
+  margin-top: auto;
+}
+ a{
+  display: block;
+  text-decoration: none;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+
+.FooterSection {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #2f2e2e;
+}
+.Footer-Inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  width: 100%;
+}
+.Footer-Inner-Logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 64px;
+}
+.Footer-Inner-List {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.Footer-Inner-List-Item {
+  margin-right: 8px;
+  padding-left: 16px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List-Item {
+    margin-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+.Footer-Inner-List-Item:not(:first-child) {
+  border-left: 1px solid #fff;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List-Item:not(:first-child) {
+    border-left: none;
+    margin-top: 20px;
+  }
+}
+.Footer-Inner-CopyRight {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+
  html {
    position: relative;
    min-height: 100%;
