@@ -4,10 +4,7 @@ class AdminGuestSessionsController < ApplicationController
     user = User.find_or_create_by(email: "admin_guest@exapmle.com") do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト管理者"
-      user.age = 111
       user.status = "会社員"
-      user.addres = "kannrigaisya"
-      user.phone_number = 0033333
       user.admin = true
     end
       session[:user_id] = user.id
