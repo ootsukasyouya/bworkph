@@ -1,0 +1,66 @@
+
+<p>
+  <strong>店舗名:</strong>
+  <%= @store.name %>
+</p>
+
+<p>
+  <strong>プロフィール:</strong>
+  <%= @store.profile %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @store.addres %>
+</p>
+<p>
+  <strong>電話番号:</strong>
+  <%= @store.phone_number %>
+</p>
+<p>
+  <strong>働き方:</strong>
+  <%= @store.how_to_work %>
+</p>
+<p>
+  <strong>稼ぎ方:</strong>
+  <%= @store.how_to_earn %>
+</p>
+<p>
+  <strong>求める待遇:</strong>
+  <%= @store.treatment %>
+</p>
+<p>
+  <strong>行き方:</strong>
+  <%= @store.go_to_work %>
+</p>
+<p>
+  <strong>スキル:</strong>
+  <%= @store.skill %>
+</p>
+<p>
+  <strong>給与:</strong>
+  <%= @store.salary %>
+</p>
+<p>
+  <strong>時間帯:</strong>
+  <%= @store.time_zone %>
+</p>
+<p>
+  <strong>駅から徒歩何分:</strong>
+  <%= @store.station_on_foot %>
+</p>
+<p>
+  <strong>年齢層:</strong>
+  <%= @store.age_group %>
+</p>
+<p>
+  <strong>県名:</strong>
+  <%= @store.prefecture_name %>
+</p>
+<p>
+  <strong>雰囲気:</strong>
+  <%= @store.atmosphere %>
+</p>
+
+<%= link_to '編集', edit_store_path(@store) %> |
+<%= link_to '一覧', stores_path %>

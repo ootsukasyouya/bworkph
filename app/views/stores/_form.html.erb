@@ -1,0 +1,73 @@
+<%= form_with(model: store) do |form| %>
+
+  <div class="field">
+    <%= form.label :店舗名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :プロフィール %>
+    <%= form.text_area :profile %>
+  </div>
+  <div class="field">
+    <%= form.label :駅名 %>
+    <%= form.text_field :station_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :住所 %>
+    <%= form.text_area :addres %>
+  </div>
+  <div class="field">
+    <%= form.label :電話番号 %>
+    <%= form.telephone_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= form.label :働き方 %>
+    <%= form.select :how_to_work, Store.how_to_works.keys.map {|k| [I18n.t("enums.store.how_to_work.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :稼ぎ方 %>
+    <%= form.select :how_to_earn, Store.how_to_earns.keys.map {|k| [I18n.t("enums.store.how_to_earn.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :募集待遇 %>
+    <%= form.select :treatment, Store.treatments.keys.map {|k| [I18n.t("enums.store.treatment.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :行き方 %>
+    <%= form.select :go_to_work, Store.go_to_works.keys.map {|k| [I18n.t("enums.store.go_to_work.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :スキル %>
+    <%= form.select :skill, Store.skills.keys.map {|k| [I18n.t("enums.store.skill.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :給与 %>
+    <%= form.select :salary, Store.salaries.keys.map {|k| [I18n.t("enums.store.salary.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :時間帯 %>
+    <%= form.select :time_zone, Store.time_zones.keys.map {|k| [I18n.t("enums.store.time_zone.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :雰囲気 %>
+    <%= form.select :atmosphere, Store.atmospheres.keys.map {|k| [I18n.t("enums.store.atmosphere.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :年齢層 %>
+    <%= form.select :age_group, Store.age_groups.keys.map {|k| [I18n.t("enums.store.age_group.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :県名 %>
+    <%= form.select :prefecture_name, Store.prefecture_names.keys.map {|k| [I18n.t("enums.store.prefecture_name.#{k}"), k]} %>
+  </div>
+  <div class="field">
+    <%= form.label :駅から歩いて何分 %>
+    <%= form.select :station_on_foot, Store.station_on_foots.keys.map {|k| [I18n.t("enums.store.station_on_foot.#{k}"), k]} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

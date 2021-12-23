@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_173603) do
+ActiveRecord::Schema.define(version: 2021_12_23_043805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,29 @@ ActiveRecord::Schema.define(version: 2021_12_22_173603) do
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "addres", null: false
+    t.string "phone_number", null: false
+    t.text "profile", null: false
+    t.string "station_name", null: false
+    t.integer "how_to_work", default: 0, null: false
+    t.integer "how_to_earn", default: 0, null: false
+    t.integer "treatment", default: 0, null: false
+    t.integer "go_to_work", default: 0, null: false
+    t.integer "skill", default: 0, null: false
+    t.integer "salary", default: 0, null: false
+    t.integer "time_zone", default: 0, null: false
+    t.integer "atmosphere", default: 0, null: false
+    t.integer "age_group", default: 0, null: false
+    t.integer "prefecture_name", default: 0, null: false
+    t.integer "station_on_foot", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_12_22_173603) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "stores", "users"
 end
