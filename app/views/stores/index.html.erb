@@ -1,5 +1,3 @@
-<%= link_to '新しい情報登録', new_store_path %>
-
 <div class="container-fruid">
   <table class="table table-striped">
     <tr>
@@ -18,8 +16,6 @@
           <td><%= store.phone_number %></td>
           <td><%= store.profile %></td>
           <td><%= link_to 'お店の詳細', store %></td>
-          <td><%= link_to '編集', edit_store_path(store) %></td>
-          <td><%= link_to '削除', store, method: :delete %></td>
         </tr>
       <% end %>
     </tbody>

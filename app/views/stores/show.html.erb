@@ -61,7 +61,9 @@
   <strong>雰囲気:</strong>
   <%= @store.atmosphere %>
 </p>
-
-<%= link_to '編集', edit_store_path(@store) %> |
+<% if current_user.status == "店舗" %>
+<%= link_to '編集', edit_store_path(@store) %>
+<% else %>
 <%= link_to '一覧', stores_path %>
 <%= link_to '地図', maps_path %>
+<% end %>
