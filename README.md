@@ -19,7 +19,8 @@ rails s
 https://docs.google.com/spreadsheets/d/1aoCHZ-HufQ9y2ve0CaFOMIBjRvRhCVTPRAV72SIx9v4/edit?usp=sharing
 # ER図
 https://drive.google.com/file/d/1rWb-7u5vkd_HVdrOdZusEx9mGLEvnSZJ/view?usp=sharing
-<img width="785" alt="スクリーンショット 2021-12-24 13 43 39" src="https://user-images.githubusercontent.com/87816144/147317306-b6450e4c-c519-4361-b383-1895a47fb061.png">
+<img width="769" alt="スクリーンショット 2021-12-24 14 54 36" src="https://user-images.githubusercontent.com/87816144/147322239-11931a12-669b-40d7-b58f-72b13f899adb.png">
+
 
 
 
