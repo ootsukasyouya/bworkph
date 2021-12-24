@@ -31,5 +31,5 @@ https://drive.google.com/file/d/1rWb-7u5vkd_HVdrOdZusEx9mGLEvnSZJ/view?usp=shari
 https://drive.google.com/file/d/1iZqZ69sJZr-Pc8IjJeYL39o5H2kTpEIc/view?usp=sharing
 # 画面遷移図
 https://drive.google.com/file/d/1uNwznhfgCX2CMSVeq-R_222WITBoj4bC/view?usp=sharing
-<img width="1053" alt="スクリーンショット 2021-12-13 16 12 19" src="https://user-images.githubusercontent.com/87816144/145768094-80f71469-0d77-4f62-847e-7e91ff8706e1.png">
+<img width="930" alt="スクリーンショット 2021-12-24 14 00 50" src="https://user-images.githubusercontent.com/87816144/147318496-03a4498a-b468-47dc-b165-1587afeea3f7.png">
 
