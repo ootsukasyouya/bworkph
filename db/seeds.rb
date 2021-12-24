@@ -1,23 +1,109 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# 20.times do |n|
+#     User.create!(
+#       email: "test#{n + 1}@test.com",
+#       name: "テスト店舗#{n + 1}",
+#       status: "店舗",
+#       password: "123456"
+#     )
+#   end
 #
-# Examples:
+# Store.create!(
+#   user_id: User.find(17).id,
+#   name: "ノマノマ",
+#   profile: "コロナで潰れそう",
+#   station_name: "高田馬場駅",
+#   addres: "東京都",
+#   phone_number: "070-000",
+#   how_to_work: "シフト申告制",
+#   how_to_earn: "高収入",
+#   treatment: "大学生募集",
+#   go_to_work: "駅ナカ",
+#   skill: "リーダー候補募集",
+#   salary: "時給1300円以上",
+#   time_zone: "夕",
+#   atmosphere: "明るめ",
+#   age_group: "平均年齢20代",
+#   prefecture_name: "東京都",
+#   station_on_foot: "駅から徒歩5分以内"
+# )
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-20.times do |n|
-    User.create!(
-      email: "test#{n + 1}@test.com",
-      name: "テスト店舗#{n + 1}",
-      status: "店舗",
-      password: "123456"
-    )
-  end
-
-  # 10.times do |n|
-  #   User.create!(
-  #     email: "test#{n + 1}@test.com",
-  #     name: "test_user#{n + 1}",
-  #     password: '123456',
-  #   )
-  # end
+# Store.create!(
+#   user_id: User.find(18).id,
+#   name: "Hうどん",
+#   profile: "昼の人数足りません",
+#   station_name: "丸亀駅",
+#   addres: "高松市",
+#   phone_number: "070-000000000",
+#   how_to_work: "登録制",
+#   how_to_earn: "日払い可",
+#   treatment: "人手不足",
+#   go_to_work: "車、バイク可",
+#   skill: "接客業",
+#   salary: "時給900円以上",
+#   time_zone: "昼",
+#   atmosphere: "体育会系",
+#   age_group: "平均年齢50代",
+#   prefecture_name: "香川県",
+#   station_on_foot: "それ以上"
+# )
+# Store.create!(
+#   user_id: User.find(19).id,
+#   name: "ラーメン王セウ牧ノ原店",
+#   profile: "賄いクソうまい",
+#   station_name: "印西牧の原駅",
+#   addres: "印西市",
+#   phone_number: "070-000000",
+#   how_to_work: "Wワーク可",
+#   how_to_earn: "月給",
+#   treatment: "フリーター募集",
+#   go_to_work: "車、バイク可",
+#   skill: "体を動かす",
+#   salary: "時給1000円以上",
+#   time_zone: "夜",
+#   atmosphere: "年齢層バラバラ",
+#   age_group: "平均年齢50代",
+#   prefecture_name: "千葉県",
+#   station_on_foot: "駅から徒歩10分以内"
+# )
+# Store.create!(
+#   user_id: User.find(20).id,
+#   name: "すんたば",
+#   profile: "田舎に咲く一輪の花",
+#   station_name: "いわき駅",
+#   addres: "いわき市",
+#   phone_number: "070-000000",
+#   how_to_work: "週１日可",
+#   how_to_earn: "月給",
+#   treatment: "主婦募集",
+#   go_to_work: "車、バイク可",
+#   skill: "体を動かす",
+#   salary: "時給950円以上",
+#   time_zone: "早朝",
+#   atmosphere: "主婦・パート中心",
+#   age_group: "平均年齢50代",
+#   prefecture_name: "福島県",
+#   station_on_foot: "駅から徒歩30分以内"
+# )
+#
+#
+# 16.times do |n|
+#     Store.create!(
+#       user_id: User.find(n + 1).id,
+#       name: "テスト店舗#{n + 1}",
+#       profile: "test#{n + 1}",
+#       station_name: "浜松駅",
+#       addres: "浜松市",
+#       phone_number: "0000000",
+#       how_to_work: "週１日可",
+#       how_to_earn: "月給",
+#       treatment: "高校生募集",
+#       go_to_work: "駅チカ",
+#       skill: "語学力求む",
+#       salary: "時給1050円以上",
+#       time_zone: "深夜",
+#       atmosphere: "社員多め",
+#       age_group: "平均年齢60代",
+#       prefecture_name: "静岡県",
+#       station_on_foot: "駅から徒歩15分以内"
+#     )
+#   end
