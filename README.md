@@ -5,8 +5,8 @@ RUBY 3.0.1
 RAILS 6.1.4.1
 ***
 # 就職termの技術  
-devise  
-ajax  
+お気に入り
+コメント
 # カリキュラム外の技術  
 gmaps4rails/geocoder（Google Mapの活用）
 # 実行手順
