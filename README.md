@@ -8,7 +8,7 @@ RAILS 6.1.4.1
 devise  
 ajax  
 # カリキュラム外の技術  
-
+gmaps4rails/geocoder（Google Mapの活用）
 # 実行手順
 git clone git@github.com:ootsukasyouya/bwph.git  
 cd bwph  
