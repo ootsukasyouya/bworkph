@@ -10,9 +10,6 @@
       email: "test#{n + 1}@test.com",
       name: "テスト太郎#{n + 1}",
       status: "店舗",
-      addres: "test",
-      phone_number: "test",
-      age: "1",
       password: "123456"
     )
   end
