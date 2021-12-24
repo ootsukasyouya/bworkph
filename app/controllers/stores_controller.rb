@@ -2,15 +2,15 @@ class StoresController < ApplicationController
   before_action :set_store, only: %i[ show edit update destroy ]
 
     def index
-      @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
-      @favorites = current_user.favorite_stores 
+      @stores = current_user.stores
+      @store = Store.all.page(params[:page]).per(8).order('created_at DESC')
+      @favorites = current_user.favorite_stores
       @search = Store.ransack(params[:q])
       @search.build_condition if @search.conditions.empty?
       @products = @search.result
     end
 
     def show
-        @store = current_user.stores.find(params[:id])
         @favorite = current_user.favorites.find_by(store_id: @store.id)
     end
 
