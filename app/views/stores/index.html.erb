@@ -4,8 +4,6 @@
     <% end %>
 <% else %>
 
-
-
 <div class="container-fruid">
   <table class="table table-striped">
     <tr>
@@ -31,21 +29,6 @@
     </tbody>
   </table>
 </div>
-<%= search_form_for @search do |f| %>
-  <%= f.condition_fields do |c| %>
-    <%= c.attribute_fields do |a| %>
-      <%= a.attribute_select %>
-    <% end %>
-    <%= c.predicate_select %>
-    <%= c.value_fields do |v| %>
-
-      <%= v.search_field :value %>
-    <% end %>
-
-  <% end %>
-
-  <%= f.submit %>
-<% end %>
 <%= paginate @store %>
 <br>
 <% end %>
