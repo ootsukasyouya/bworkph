@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_24_045510) do
+ActiveRecord::Schema.define(version: 2021_12_24_061908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2021_12_24_045510) do
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id", "recipient_id"], name: "index_conversations_on_sender_id_and_recipient_id", unique: true
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_favorites_on_store_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -78,6 +87,8 @@ ActiveRecord::Schema.define(version: 2021_12_24_045510) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "favorites", "stores"
+  add_foreign_key "favorites", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "stores", "users"

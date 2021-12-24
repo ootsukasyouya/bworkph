@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
   belongs_to :user
-
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_users, through: :favorites, source: :user
   enum how_to_work:{登録制:0, 短期:1, シフト申告制:2, 週１日可:3, Wワーク可:4}
   enum how_to_earn:{高収入:0, 日払い可:1, 週払い可:2, 月給:3}
   enum treatment:{高校生募集:0, 大学生募集:1, フリーター募集:2, 主婦募集:3, 人手不足:4}
