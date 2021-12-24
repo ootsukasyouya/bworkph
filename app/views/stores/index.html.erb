@@ -15,12 +15,29 @@
           <td><%= store.addres %></td>
           <td><%= store.phone_number %></td>
           <td><%= store.profile %></td>
-          <td><%= store.favorites %></td>
           <td><%= link_to 'お店の詳細', store %></td>
+          <% if @favorites.find_by(id: store.id) %>
+            <td><%= "お気に入り済み" %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+<%= search_form_for @search do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select %>
+    <% end %>
+    <%= c.predicate_select %>
+    <%= c.value_fields do |v| %>
+
+      <%= v.search_field :value %>
+    <% end %>
+
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
 <%= paginate @stores %>
 <br>

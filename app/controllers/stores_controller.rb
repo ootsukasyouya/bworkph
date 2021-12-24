@@ -3,6 +3,10 @@ class StoresController < ApplicationController
 
     def index
       @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
+      @favorites = current_user.favorite_stores 
+      @search = Store.ransack(params[:q])
+      @search.build_condition if @search.conditions.empty?
+      @products = @search.result
     end
 
     def show
