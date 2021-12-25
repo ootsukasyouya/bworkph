@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :status, presence: true
   before_validation { email.downcase! }
   has_secure_password
-  enum status:{会社員:0, 主婦:1, フリーター:2, 高校生:3, 無職:4, 大学生:5, 外国人:6, 店舗:7}
+  enum status:{店舗:0, 求職者:1}
 
   def check_admin_user_exist
     if User.where(admin: true).count <= 1 && self.admin == true

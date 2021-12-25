@@ -15,17 +15,13 @@
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <header>
-      <ul class="nav">
-        <li class="navbar-item">
-          <%= link_to("ユーザー新規登録", "/users/new", { class: "nav-link"}) %>
-        </li>
-        <li class="navbar-item">
-          <%= link_to("ログアウト", "/sessions/new", {method: "delete", class: "nav-link"}) %>
-        </li>
-        <li class="navbar-item">
-          <%= link_to("ログイン画面", "/sessions/new", {method: "delete", class: "nav-link"}) %>
-        </li>
-      </ul>
+      <% unless current_page?(new_session_path) %>
+        <ul class="nav">
+          <li class="navbar-item">
+            <%= link_to("ログアウト", "/sessions/new", {method: "delete", class: "nav-link"}) %>
+          </li>
+        </ul>
+      <% end %>
     </header>
   <%= yield %>
   <div class="FooterSection">
