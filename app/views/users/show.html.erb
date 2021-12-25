@@ -1,7 +1,6 @@
-<p>マイページ <%= @user.id %></p>
+<h1><p>マイページ</p>
 <p>名前 <%= @user.name %></p>
 <p>メールアドレス <%= @user.email %></p>
-<p>ステータス<%= @user.status %></p>
 <% if current_user.status == "店舗" %>
   <%= link_to "作成", new_store_path(@user) %>
   <%= link_to '編集', edit_user_path(@user) %>
@@ -16,3 +15,4 @@
   <%= link_to '編集', edit_user_path(@user) %>
   <%= link_to 'メッセージ', users_path(@user) %>
 <% end %>
+</h1>

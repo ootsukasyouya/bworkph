@@ -2,24 +2,23 @@
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :名前 %><br />
+    <%= f.label :名前の変更 %>
     <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="field">
-    <%= f.label :メールアドレス %><br />
+    <%= f.label :メールアドレス %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
   <div class="field">
-    <%= f.label :お店の方は店舗で登録、それ以外の方は該当のものを選んでください %><br/>
+    <%= f.label :店舗の方ですか？求職者ですか？ %><br/>
     <%= f.select :status, User.statuses.keys.map {|k| [I18n.t("enums.user.status.#{k}"), k]}, autofocus: true %>
   </div>
   <div class="field">
