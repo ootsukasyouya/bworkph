@@ -6,7 +6,7 @@
 #       password: "123456"
 #     )
 #   end
-#
+
 # Store.create!(
 #   user_id: User.find(17).id,
 #   name: "ノマノマ",
@@ -84,7 +84,7 @@
 #   prefecture_name: "福島県",
 #   station_on_foot: "駅から徒歩30分以内"
 # )
-#
+
 #
 # 16.times do |n|
 #     Store.create!(
