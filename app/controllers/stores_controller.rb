@@ -2,12 +2,37 @@ class StoresController < ApplicationController
   before_action :set_store, only: %i[ show edit update destroy ]
 
     def index
-      @stores = current_user.stores
-      @store = Store.all.page(params[:page]).per(8).order('created_at DESC')
-      @favorites = current_user.favorite_stores
-      @search = Store.ransack(params[:q])
-      @search.build_condition if @search.conditions.empty?
-      @products = @search.result
+      if params[:employee]
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+
+      else
+        @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
+        @favorites = current_user.favorite_stores
+      end
+      if params[:how_to_work].present? && params[:how_to_earn].present? && params[:treatment].present?
+         # && params[:go_to_work].present? && params[:skill].present? && params[:salary].present? && params[:time_zone].present? && params[:atmosphere].present? && params[:age_group].present? && params[:station_on_foot].present? && params[:prefecture_name].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_work(params[:how_to_work]).search_how_to_earn(params[:how_to_earn]).search_treatment(params[:treatment]).page(params[:page])
+        # .search_go_to_work(params[:go_to_work]).search_skill(params[:skil]).search_salary(params[:salary]).search_time_zone(params[:time_zone]).search_atmosphere(params[:atmosphere]).search_age_group(params[:age_group]).search_station_on_foot(params[:station_on_foot]).search_prefecture_name(params[:prefecture_name])
+      elsif params[:how_to_work].present? && params[:how_to_earn].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_work(params[:how_to_work]).search_how_to_earn(params[:how_to_earn]).page(params[:page])
+      elsif params[:how_to_work].present? && params[:treatment].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_work(params[:how_to_work]).search_treatment(params[:treatment]).page(params[:page])
+      elsif params[:how_to_earn].present? && params[:treatment].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_earn(params[:how_to_earn]).search_treatment(params[:treatment]).page(params[:page])
+      elsif params[:how_to_work].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_work(params[:how_to_work]).page(params[:page])
+      elsif params[:how_to_earn].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_how_to_earn(params[:how_to_earn]).page(params[:page])
+      elsif params[:treatment].present?
+        @stores = Store.all.page(params[:page]).per(8).order('created_at DESC')
+        @stores = @stores.search_treatment(params[:treatment]).page(params[:page])
+      end
     end
 
     def show
@@ -46,7 +71,12 @@ class StoresController < ApplicationController
 
     private
       def set_store
-        @store = current_user.stores.find(params[:id])
+        @store = Store.find(params[:id])
+        # if params[:employee]
+        #   @store = Store.find(params[:id])
+        # else
+        #   @store = current_user.stores.find(params[:id])
+        # end
       end
       def store_params
         params.require(:store).permit(:name, :profile, :addres, :phone_number, :how_to_work, :how_to_earn, :tratement, :go_to_work, :skill, :salary, :time_zone, :station_on_foot, :age_group, :prefecture_name, :atmosphere,:station_name)

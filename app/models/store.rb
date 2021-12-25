@@ -1,4 +1,15 @@
 class Store < ApplicationRecord
+  scope :search_how_to_work,->(how_to_work_search){where(how_to_work:"#{how_to_work_search}")}
+  scope :search_how_to_earn,->(how_to_earn_search){where(how_to_earn:"#{how_to_earn_search}")}
+  scope :search_treatment,->(treatment_search){where(treatment:"#{treatment_search}")}
+  # scope :search_go_to_work,->(go_to_work_search){where(go_to_work:"#{go_to_work_search}")}
+  # scope :search_skill,->(skill_search){where(skill:"#{skill_search}")}
+  # scope :search_salary,->(saraly_search){where(saraly:"#{saraly_search}")}
+  # scope :search_time_zone,->(time_zone_search){where(time_zone:"#{time_zone_search}")}
+  # scope :search_atmosphere,->(atmosphere_search){where(atmosphere:"#{atmosphere_search}")}
+  # scope :search_age_group,->(age_group_search){where(age_group:"#{age_group_search}")}
+  # scope :search_station_on_foot,->(station_on_foot_search){where(station_on_foot:"#{station_on_foot_search}")}
+  # scope :search_prefecture_name,->(prefecture_name_search){where(prefecture_name:"#{prefecture_name_search}")}
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user

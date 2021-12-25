@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :send_messages,foreign_key: "sender_id",class_name:'Conversation', dependent: :destroy
+  has_many :recipient_messages,foreign_key: 'recipient_id',class_name:'Conversation', dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :stores, dependent: :destroy
   has_many :favorite_stores, through: :favorites, source: :store
