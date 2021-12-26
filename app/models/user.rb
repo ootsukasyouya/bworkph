@@ -4,14 +4,17 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :stores, dependent: :destroy
   has_many :favorite_stores, through: :favorites, source: :store
+
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 },
      format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :status, presence: true
   before_validation { email.downcase! }
   has_secure_password
-  enum status:{店舗:0, 求職者:1}
 
+  enum status:{店舗:0, 求職者:1}
+  
+  before_destroy :check_admin_user_exist
   def check_admin_user_exist
     if User.where(admin: true).count <= 1 && self.admin == true
       throw(:abort)

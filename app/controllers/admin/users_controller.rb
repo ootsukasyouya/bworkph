@@ -37,8 +37,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to admin_users_path
+    if @user.destroy
+      redirect_to admin_users_path
+    else
+      redirect_to admin_users_path
+      flash[:notice]="管理者自身は削除できません"
+    end
   end
 
   private
