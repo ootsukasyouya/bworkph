@@ -2,11 +2,8 @@
 <% if current_user.status == "店舗" %>
   <% @stores.each do |store| %>
     <td><%= store.name %></td>
-    <td><%= store.addres %></td>
-    <td><%= store.phone_number %></td>
-    <td><%= store.profile %></td>
     <td><%= link_to 'お店の編集', stores_path %></td>
-    <td><%= link_to 'お店の削除', new_store_path, method: :delete %></td>
+    <td><%= link_to 'お店の削除', stores_path, method: :delete %></td>
 <% end %>
 
 

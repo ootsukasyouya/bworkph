@@ -5,10 +5,10 @@
   <%= link_to "店舗作成", new_store_path(@user) %>
   <%= link_to '名前、パスワード変更', edit_user_path(@user) %>
   <%= link_to '一覧', users_path(@user) %>
+  <%= link_to "店舗一覧", stores_path %>
 <% else %>
   <% if @user.id != current_user.id %>
-    <%= link_to "店舗一覧", stores_path(employee:true) %>
-  <% else %>
+
     <%= link_to "店舗一覧", stores_path %>
   <% end %>
 

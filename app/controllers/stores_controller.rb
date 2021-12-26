@@ -3,13 +3,12 @@ class StoresController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
     def index
+      # if params[:employee]
+      #   @stores = current_user.stores.page
+      # else
         @q = Store.ransack(params[:q])
         @stores = @q.result(distinct: true).page(params[:page]).per(8).order('created_at DESC')
         @favorites = current_user.favorite_stores
-      # else
-      #   @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
-      #   @favorites = current_user.favorite_stores
-      # end
     end
 
     def show
