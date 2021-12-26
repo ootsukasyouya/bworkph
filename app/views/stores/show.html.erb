@@ -1,14 +1,12 @@
-
+<h1>
 <p>
   <strong>店舗名:</strong>
   <%= @store.name %>
 </p>
-
 <p>
   <strong>プロフィール:</strong>
   <%= @store.profile %>
 </p>
-
 <p>
   <strong>住所:</strong>
   <%= @store.addres %>
@@ -61,8 +59,11 @@
   <strong>雰囲気:</strong>
   <%= @store.atmosphere %>
 </p>
+
 <% if current_user.status == "店舗" %>
-<%= link_to '編集', edit_store_path(@store) %>
+<%= link_to '編集画面へ', edit_store_path(@store) %>
+<%= link_to '新しい店舗作成へ', new_store_path(@store) %>
+</h1>
 <% else %>
 <%= link_to '一覧', stores_path %>
 <%= link_to '地図', maps_path %>

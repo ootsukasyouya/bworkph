@@ -2,8 +2,8 @@
 <p>名前 <%= @user.name %></p>
 <p>メールアドレス <%= @user.email %></p>
 <% if current_user.status == "店舗" %>
-  <%= link_to "作成", new_store_path(@user) %>
-  <%= link_to '編集', edit_user_path(@user) %>
+  <%= link_to "店舗作成", new_store_path(@user) %>
+  <%= link_to '名前、パスワード変更', edit_user_path(@user) %>
   <%= link_to '一覧', users_path(@user) %>
 <% else %>
   <% if @user.id != current_user.id %>
