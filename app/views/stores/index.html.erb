@@ -52,57 +52,57 @@
   <%= search_form_for @q do |f| %>
     <%= f.label :how_to_work, "働き方" %>
     <%= f.select :how_to_work_eq, Store.how_to_works.map{|k,v| [Store.how_to_works_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索1" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :how_to_earn, "稼ぎ方" %>
     <%= f.select :how_to_earn_eq, Store.how_to_earns.map{|k,v| [Store.how_to_earns_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索2" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :treatment, "募集待遇" %>
     <%= f.select :treatment_eq, Store.treatments.map{|k,v| [Store.treatments_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索3" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :go_to_work, "行き方" %>
     <%= f.select :go_to_work_eq, Store.go_to_works.map{|k,v| [Store.go_to_works_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索4" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :skill, "スキル" %>
     <%= f.select :skill_eq, Store.skills.map{|k,v| [Store.skills_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索5" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :salary, "給与" %>
     <%= f.select :salary_eq, Store.salaries.map{|k,v| [Store.salaries_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索6" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :time_zone, "時間帯" %>
     <%= f.select :time_zone_eq, Store.time_zones.map{|k,v| [Store.time_zones_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索7" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :atmosphere, "雰囲気" %>
     <%= f.select :atmosphere_eq, Store.atmospheres.map{|k,v| [Store.atmospheres_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索8" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :age_group, "年齢層" %>
     <%= f.select :age_group_eq, Store.age_groups.map{|k,v| [Store.age_groups_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索9" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :station_on_foot, "駅から歩いて何分" %>
     <%= f.select :station_on_foot_eq, Store.station_on_foots.map{|k,v| [Store.station_on_foots_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索10" %>
   <% end %>
   <%= search_form_for @q do |f| %>
     <%= f.label :age_group, "県名" %>
     <%= f.select :prefecture_name_eq, Store.prefecture_names.map{|k,v| [Store.prefecture_names_i18n[k],v]} %>
-    <%= f.submit "検索" %>
+    <%= f.submit "検索11" %>
   <% end %>
 </div>
 

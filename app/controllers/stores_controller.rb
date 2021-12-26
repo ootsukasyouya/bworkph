@@ -6,10 +6,6 @@ class StoresController < ApplicationController
         @q = Store.ransack(params[:q])
         @stores = @q.result(distinct: true).page(params[:page]).per(8).order('created_at DESC')
         @favorites = current_user.favorite_stores
-      # else
-      #   @stores = current_user.stores.page(params[:page]).per(8).order('created_at DESC')
-      #   @favorites = current_user.favorite_stores
-      # end
     end
 
     def show
@@ -45,7 +41,7 @@ class StoresController < ApplicationController
 
     def destroy
       @store.destroy
-      redirect_to stores_path
+      redirect_to new_store_path
     end
 
     def search
@@ -59,11 +55,6 @@ class StoresController < ApplicationController
     end
     def set_store
       @store = Store.find(params[:id])
-      # if params[:employee]
-      #   @store = Store.find(params[:id])
-      # else
-      #   @store = current_user.stores.find(params[:id])
-      # end
     end
     def store_params
       params.require(:store).permit(:name, :profile, :addres, :phone_number, :how_to_work, :how_to_earn, :tratement, :go_to_work, :skill, :salary, :time_zone, :station_on_foot, :age_group, :prefecture_name, :atmosphere,:station_name)

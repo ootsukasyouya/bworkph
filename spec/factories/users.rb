@@ -23,4 +23,22 @@ FactoryBot.define do
     password { "9999999" }
     admin { "true" }
   end
+
+  factory :forth_user, class: User do
+    name { "test4" }
+    email { "test4@test.com" }
+    password { "test234" }
+    password_confirmation { "test234" }
+    admin { "false" }
+    status {"店舗"}
+  end
+
+  factory :fifth_user, class: User do
+    name { "test5" }
+    email { "test5@test.com" }
+    password { "test234" }
+    password_confirmation { "test234" }
+    admin { "false" }
+    status {"店舗"}
+  end
 end
