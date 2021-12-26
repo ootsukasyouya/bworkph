@@ -60,6 +60,7 @@ RSpec.describe 'ストア管理機能', type: :system do
         expect(page).to have_content 'お気に入り済み'
       end
     end
+  end
   describe '店舗が持つ機能' do
     before do
       second_user = FactoryBot.create(:second_user)
@@ -123,6 +124,5 @@ RSpec.describe 'ストア管理機能', type: :system do
         expect(current_path).to eq new_store_path
       end
     end
-
   end
 end
