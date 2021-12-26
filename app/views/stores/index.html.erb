@@ -1,8 +1,17 @@
+<h1>
 <% if current_user.status == "店舗" %>
   <% @stores.each do |store| %>
-    <h1><%= link_to 'お店の編集', store %></h1>
-    <h1><%= link_to 'お店の削除', store, method: :delete %></h1>
-  <% end %>
+    <td><%= store.name %></td>
+    <td><%= store.addres %></td>
+    <td><%= store.phone_number %></td>
+    <td><%= store.profile %></td>
+    <td><%= link_to 'お店の編集', stores_path %></td>
+    <td><%= link_to 'お店の削除', new_store_path, method: :delete %></td>
+<% end %>
+
+
+
+
 <% else %>
 
 <div class="container-fruid">
@@ -91,3 +100,4 @@
 <%= paginate @stores %>
 <br>
 <% end %>
+</h1>
