@@ -12,11 +12,11 @@ class ConversationsController < ApplicationController
       end
       redirect_to conversation_messages_path(@conversation)
     else
-      redirect_to root_path
+      redirect_to users_path
     end
   end
   private
   def conversation_params
-  params.permit(:sender_id, :recipient_id)
+    params.permit(:sender_id, :recipient_id)
   end
 end

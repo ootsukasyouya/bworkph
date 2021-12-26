@@ -1,18 +1,23 @@
 <h1>
-<% if current_user.status == "店舗" %>
+
   <% @stores.each do |store| %>
-    <td><%= store.name %></td>
-    <td><%= store.addres %></td>
-    <td><%= store.phone_number %></td>
-    <td><%= store.profile %></td>
-    <td><%= link_to 'お店の編集', stores_path %></td>
-    <td><%= link_to 'お店の削除', new_store_path, method: :delete %></td>
-<% end %>
+    <% if store.user_id ==current_user.id %>
+      <td><%= store.name %></td>
+      <td><%= store.addres %></td>
+      <td><%= store.phone_number %></td>
+      <td><%= store.profile %></td>
+      <td>
+        <%= link_to 'お店の詳細', store_path(store) %>/
+        <%= link_to 'お店の編集', edit_store_path(store) %>/
+        <%= link_to 'お店の削除', store, method: :delete,data:{confirm:"本当に削除してよろしいでしょうか？"} %>
+      </td>
+    <% end %>
+  <% end %>
 
 
 
 
-<% else %>
+<% if current_user.status != "店舗" %>
 
 <div class="container-fruid">
   <table class="table table-striped">
@@ -21,6 +26,7 @@
       <th>住所</th>
       <th>電話番号</th>
       <th>プロフィール</th>
+      <th>お店管理者</th>
       <th colspan="3"></th>
     </tr>
     <tbody>
@@ -30,10 +36,13 @@
           <td><%= store.addres %></td>
           <td><%= store.phone_number %></td>
           <td><%= store.profile %></td>
+          <td><%= store.user.name %></td>
+          <td><%= link_to '管理者にメッセージ', conversations_path(sender_id:current_user.id,recipient_id:store.user_id),method: :post%></td>
           <td><%= link_to 'お店の詳細', store %></td>
             <% if @favorites.find_by(id: store.id) %>
               <td><%= "お気に入り済み" %></td>
             <% end %>
+
         </tr>
       <% end %>
     </tbody>

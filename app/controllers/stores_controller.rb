@@ -43,7 +43,7 @@ class StoresController < ApplicationController
 
     def destroy
       @store.destroy
-      redirect_to @store
+      redirect_to stores_path
     end
 
     def search

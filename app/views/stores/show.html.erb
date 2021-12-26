@@ -61,8 +61,8 @@
 </p>
 
 <% if current_user.status == "店舗" %>
-<%= link_to '編集画面へ', edit_store_path(@store) %>
 <%= link_to '新しい店舗作成へ', new_store_path(@store) %>
+<%= link_to '一覧', stores_path %>
 </h1>
 <% else %>
 <%= link_to '一覧', stores_path %>
