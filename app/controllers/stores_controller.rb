@@ -28,7 +28,9 @@ class StoresController < ApplicationController
       if @store.save
         redirect_to @store
       else
+        flash.now[:danger] = '情報を全て入力してください'
         render new_store_path
+
       end
     end
 
