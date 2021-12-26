@@ -17,9 +17,6 @@
   float: right;
   font-size: 20px;
 }
-footer {
-  margin-top: auto;
-}
  a{
   display: block;
   text-decoration: none;
@@ -33,6 +30,7 @@ img{
   padding-top: 24px;
   padding-bottom: 24px;
   background: #2f2e2e;
+  width: 100%;
 }
 .Footer-Inner {
   margin-left: auto;

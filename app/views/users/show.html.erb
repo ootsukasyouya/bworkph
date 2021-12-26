@@ -4,8 +4,7 @@
 <% if current_user.status == "店舗" %>
   <%= link_to "管理店舗一覧", stores_path %>
   <%= link_to "店舗作成", new_store_path(@user) %>
-  <%= link_to '名前、パスワード変更', edit_user_path(@user) %>
-  <%= link_to '一覧', users_path(@user) %>
+  <%= link_to 'ユーザ情報変更', edit_user_path(@user) %>
 <% else %>
   <% if @user.id != current_user.id %>
     <%= link_to "店舗一覧", stores_path %>
@@ -13,7 +12,7 @@
     <%= link_to "店舗一覧", stores_path %>
   <% end %>
 
-  <%= link_to '編集', edit_user_path(@user) %>
-  <%= link_to 'メッセージ', users_path(@user) %>
+  <%= link_to 'ユーザー情報変更', edit_user_path(@user) %>
+
 <% end %>
 </h1>
