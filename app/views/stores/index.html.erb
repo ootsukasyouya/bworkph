@@ -40,7 +40,7 @@
           <td><%= link_to '管理者にメッセージ', conversations_path(sender_id:current_user.id,recipient_id:store.user_id),method: :post%></td>
           <td><%= link_to 'お店の詳細', store %></td>
             <% if @favorites.find_by(id: store.id) %>
-              <td><%= "お気に入り済み" %></td>
+              <i class="fas fa-heart"></i>
             <% end %>
 
         </tr>
